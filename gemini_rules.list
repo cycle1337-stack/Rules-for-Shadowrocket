@@ -24,6 +24,10 @@ DOMAIN-SUFFIX,google.com,PROXY
 DOMAIN-SUFFIX,googleusercontent.com,PROXY
 DOMAIN-SUFFIX,accounts.google.com,PROXY
 
+# Google 应用后台分析与环境校验（防止因直连泄露真实 IP 导致 Gemini 区域锁定）
+DOMAIN,app-analytics-services.com
+
+# 通用 Google 兜底
 DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN,ai.google.dev
 DOMAIN,bard.google.com
