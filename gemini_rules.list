@@ -11,7 +11,9 @@ DOMAIN-SUFFIX,deepmind.google
 DOMAIN,app-analytics-services.com
 DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,gstatic.com
-DOMAIN-KEYWORD,googleapis
+
+# === Google 核心 API 服务 ===
+DOMAIN-SUFFIX,googleapis.com
 
 # === 核心依赖 (AI Studio / 图片生成 / 历史记录) ===
 DOMAIN-SUFFIX,aistudio.google.com
