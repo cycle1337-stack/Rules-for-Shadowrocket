@@ -8,7 +8,7 @@ DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 
 # === 关键验证与信标通道 (防止泄露) ===
-DOMAIN,app-analytics-services.com
+#DOMAIN,app-analytics-services.com
 DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,gstatic.com
 
