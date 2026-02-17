@@ -5,6 +5,6 @@
 hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com
 
 [Body Rewrite]
-# [span_5](start_span)使用 JQ 精准重写底部 Tab，强制保留：首页、动态、发布(+)、我的[span_5](end_span)
-# 逻辑：删除 pos 为 4 (通常是会员购) 的元素
-http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? '.data.bottom |= map(select(.pos != 4))'
+# 同时剔除 pos 3 (发布) 和 pos 4 (会员购/消息)
+# 这样底栏将只剩下：首页、动态、我的
+http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? '.data.bottom |= map(select(.pos != 3 and .pos != 4))'
