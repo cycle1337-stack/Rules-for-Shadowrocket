@@ -1,0 +1,15 @@
+#!name=B站UI精简(找回发布)
+#!desc=找回底部发布按钮，移除会员购，不干扰评论区，不报错。
+
+[MITM]
+hostname = %APPEND% app.bilibili.com
+
+[Script]
+# 核心逻辑：修改底栏配置
+# pos对应：1首页，2频道，3发布，4会员购/消息，5我的
+# 我们保留 1, 2, 3, 5，去掉 4 即可
+B站底栏优化 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2, requires-body=1, script-path=https://raw.githubusercontent.com/yichahucha/surge/master/scripts/bilibili_tab.js, argument="1,2,3,5"
+
+https://www.merriam-webster.com/dictionary/rewrite
+# 屏蔽掉右上角的活动图标（如果你想找回，就给下面这行加#号）
+^https?:\/\/app\.bilibili\.com\/x\/resource\/top\/activity - reject-dict
