@@ -6,7 +6,7 @@ hostname = %APPEND% app.bilibili.com
 
 [Script]
 # 核心逻辑：修改底栏配置
-# pos对应：1首页，2频道，3发布，4会员购/消息，5我的
+# pos对应：1首页，2关注，3发布，4会员购，5我的
 # 我们保留 1, 2, 3, 5，去掉 4 即可
 B站底栏优化 = type=http-response, pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2, requires-body=1, script-path=https://raw.githubusercontent.com/yichahucha/surge/master/scripts/bilibili_tab.js, argument="1,2,3,5"
 
