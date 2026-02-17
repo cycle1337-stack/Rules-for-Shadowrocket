@@ -1,12 +1,23 @@
-#!name=B站去除会员购和游戏中心
+#!name=B站app精简
 #!desc=作者：循环1337
 
 [MITM]
 hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com
 
+[Map Local]
+# 拦截搜索广场，彻底去除热搜和发现
+^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" header="Content-Type:text/plain"
+
 [Body Rewrite]
-# 1. 底部栏精简：剔除发布(pos 3)和会员购(pos 4)
+# 1. 底部栏精简：剔除发布(3)和会员购(4)
 http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? '.data.bottom |= map(select(.pos != 3 and .pos != 4))'
 
-# 2. 顶部栏精准过滤：只保留名称为“消息”的项目，剔除“游戏中心”等其他图标
+# 2. 顶部栏精简：只保留消息，去除游戏机图标
 http-response-jq ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2\? '.data.top |= map(select(.name == "消息"))'
+
+# 3. 首页全方位去广告：清空顶部 Banner + 剔除刷出来的 ad_info 广告卡片
+# 逻辑：只要 banner_item 为空 且 ad_info 为空的项目才保留
+http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\? '.data.items |= map(select(.banner_item == null and .ad_info == null))'
+
+# 4. “我的”页面净化：剔除游戏中心、会员购、漫画、公益、我的课程等
+http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\? '.data.sections_v2 |= map(.items |= map(select(.title | IN("看视频免流量", "游戏中心", "会员购", "漫画", "哔哩哔哩公益", "我的课程", "能量加油站", "未成年人守护") | not)))'
