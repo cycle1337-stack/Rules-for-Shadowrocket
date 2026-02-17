@@ -1,5 +1,5 @@
-#!name=B站去除会员购模块
-#!desc=找回底部发布按钮，移除会员购，不干扰评论区，不报错。
+#!name=B站去除会员购和游戏中心
+#!desc=作者：循环1337
 
 [MITM]
 hostname = %APPEND% app.bilibili.com, grpc.biliapi.net, api.bilibili.com
