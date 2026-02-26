@@ -60,9 +60,6 @@ RULE-SET,https://yfamilys.com/rule/Claude.list,✒️ Claude,update-interval = 8
 # >> 特殊 App 规则
 RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/Talkatone.txt,☎️ Tkatone,update-interval = 86400
 
-# 币安在香港其实可以直连，但为了合规或账户安全，走新加坡也可以，这里保持原样
-RULE-SET,https://whatshub.top/rule/Binance.list,🇸🇬 狮城节点,update-interval = 86400
-
 # >> TikTok (香港不可用，必须代理)
 RULE-SET,https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TikTok.list,🎵 Tiktok,update-interval = 86400
 
