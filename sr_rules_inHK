@@ -22,7 +22,7 @@ dns-direct-fallback-proxy = true
 # --- AI 服务 (香港IP通常被锁，强制走代理) ---
 🍎 苹果智能 = select, 🇺🇲 美国节点
 ✨ Gemini = select, 🇺🇲 美国节点, 🇸🇬 狮城节点
-💬 OpenAI = select, 🇺🇲 美国节点, 🇸🇬 狮城节点, 🗺️ Non-HK
+💬 OpenAI = select, 🇺🇲 美国节点, 🇸🇬 狮城节点
 ✒️ Claude = select, 🇺🇲 美国节点, 🇸🇬 狮城节点
 
 # --- 特殊服务 ---
@@ -43,7 +43,7 @@ dns-direct-fallback-proxy = true
 🇰🇷 韩国节点 = url-test, tolerance = 50, policy-regex-filter = (🇰🇷|韩|Korea|KR)
 🇺🇲 美国节点 = url-test, tolerance = 50, policy-regex-filter = (🇺🇸)|(美)|(States)|(US)
 🇺🇳 小众节点 = url-test, tolerance = 50, policy-regex-filter = ^(?!.*(🇭🇰|港|HK|🇹🇼|台|TW|🇯🇵|日|JP|🇸🇬|新|SG|🇺🇸|美|US|🇰🇷|韩|Korea|KR|流量|到期|剩余|COM|com|官网)).*
-# 非香港节点组：用于AI等封锁HK IP的服务
+# 非香港节点组
 🗺️ Non-HK = url-test, tolerance = 50, policy-regex-filter = ^(?!.*(🇭🇰|港|Hong|HK|流量|到期|剩余|COM|com|官网)).*
 
 [Rule]
@@ -59,6 +59,7 @@ RULE-SET,https://yfamilys.com/rule/Claude.list,✒️ Claude,update-interval = 8
 
 # >> 特殊 App 规则
 RULE-SET,https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rule/Talkatone.txt,☎️ Tkatone,update-interval = 86400
+
 # 币安在香港其实可以直连，但为了合规或账户安全，走新加坡也可以，这里保持原样
 RULE-SET,https://whatshub.top/rule/Binance.list,🇸🇬 狮城节点,update-interval = 86400
 
