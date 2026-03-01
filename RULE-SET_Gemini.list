@@ -9,11 +9,9 @@ DOMAIN-SUFFIX,deepmind.google
 
 # === 关键验证与信标通道 (防止泄露) ===
 #DOMAIN,app-analytics-services.com
+DOMAIN-SUFFIX,google-analytics.com
 DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,gstatic.com
-
-# === Google 核心 API 服务 ===
-DOMAIN-SUFFIX,googleapis.com
 
 # === 核心依赖 (AI Studio / 图片生成 / 历史记录) ===
 DOMAIN-SUFFIX,aistudio.google.com
@@ -34,4 +32,12 @@ DOMAIN-SUFFIX,apis.google.com
 DOMAIN-KEYWORD,colab
 DOMAIN-KEYWORD,developerprofiles
 DOMAIN-KEYWORD,generativelanguage
+DOMAIN-KEYWORD,play.google.com
+DOMAIN-KEYWORD,clients6.google.com
+DOMAIN-KEYWORD,ogs.google.com
+
+# === Google 核心 API 兜底 ===
+DOMAIN-SUFFIX,googleapis.com
+
+# === Google 兜底 ===
 DOMAIN-SUFFIX,google.com
