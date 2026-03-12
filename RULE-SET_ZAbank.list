@@ -1,0 +1,25 @@
+# ZA Bank (众安银行) Rule-set
+# 包含众安银行、众安保险、众安业务相关域名
+
+# ZA Bank 核心域名
+DOMAIN-SUFFIX,zabank.com
+DOMAIN-SUFFIX,za.group
+DOMAIN-SUFFIX,za.com
+
+# 众安业务相关
+DOMAIN-SUFFIX,zajourney.com
+DOMAIN-SUFFIX,zafinsvc.com
+DOMAIN-SUFFIX,zaticdn.com
+DOMAIN-SUFFIX,guardease.com
+
+# 内部接口与应用监控
+DOMAIN,bankappgw.za.group
+DOMAIN,appmon-prd.zajourney.com
+DOMAIN,webmon-prd.zajourney.com
+DOMAIN,integrate-appgw.zajourney.com
+DOMAIN,ir-sdk.guardease.com
+DOMAIN,bank-sbsmarket.zafinsvc.com
+DOMAIN,bank-stock.zafinsvc.com
+DOMAIN,offlineapp.za.group
+DOMAIN,wbs.za.group
+DOMAIN,mobile.za.group
